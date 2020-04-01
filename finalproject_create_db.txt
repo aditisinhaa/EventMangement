@@ -1,0 +1,45 @@
+
+1)Create the Database flairevents:
+use flairevents;
+
+
+2)insert the data(it automatically creates the collection and inserts them):
+
+db.connections.insertMany([{connectionId: "CID0001", cname: "Charlotte Career Fair", ctopic: "Lets Suit Up- Professional Events",
+  cdetail: "You are no longer just a piece of paper. Attend the career fair and get in front of decision makers!!",
+	ctime: "Tuesday, November 27, 2019,10:00am - 3:30pm", chost: "Flair Events",clocation: "Uptown,Charlotte",cimg:"CID0001",userId:"UID1"},
+{connectionId: "CID0002", cname: "The Techie Talks", ctopic: "Lets Suit Up- Professional Events",
+  cdetail: "Technical Community event designed to bring IT leaders in the local area together for deep technical discussions.",
+  ctime: "Friday, December 25, 2019,9:30am - 12:30pm", chost: "Flair Events",clocation: "Uptown,Charlotte",cimg:"CID0002",userId:"UID1"},
+{connectionId: "CID0003", cname: "Meet Greet", ctopic: "Lets Suit Up- Professional Events",
+  cdetail: "An opportunity to network and share ideas with other IT professionals in the area.",
+  ctime: "Tuesday, October 18, 2019,9:30am - 12:30pm", chost: "Flair Events",clocation: "Uptown,Charlotte",cimg:"CID0003",userId:"UID2"},
+{connectionId: "CID0004", cname: "Underwater Hockey", ctopic: "Lets Go Crazy- Recreational Events",
+  cdetail: "Day for a Breathtaking experience under the water.",
+  ctime: "Tuesday, October 18, 2019,9:30am - 12:30pm", chost: "Flair Events",clocation: "Uptown,Charlotte",cimg:"CID0004",userId:"UID1"},
+{connectionId: "CID0005", cname: "Toe Wrestling", ctopic: "Lets Go Crazy- Recreational Events",
+  cdetail: "Dip your toe once!!",
+  ctime: "Tuesday, November 27, 2019,10:00am - 3:30pm", chost: "Flair Events",clocation: "Uptown,Charlotte",cimg:"CID0005",userId:"UID2"},
+						   {connectionId: "CID0006", cname: "The Stand Up Comedy Show", ctopic: "Lets Go Crazy- Recreational Events",
+  cdetail: "Is This a Joke? You Decide!!",
+  ctime: "Tuesday, November 18, 2019,9:30pm - 11:30pm", chost: "Flair Events",clocation: "Uptown,Charlotte",cimg:"CID0006",userId:"UID1"}]);
+
+
+db.userdetails.insertMany([{userId: "UID1", fname: "Nicole", lname: "Kidman",
+  emailId: "nickidman@abc.com",
+	address: "Apt F Barton Creek Dr.",city: "Charlotte",state:"NC",zipcode:28262,country:"United States",saltPassword:"2f49ee6a678f0c10",hashPassword:"7caee8c69c538acc4e7bd323dfa9b851d20baf9a6f3b4bcae45be30cb3e3b0eb37d6d179f2f49904116cb5f834e96d425347db18bb56ad35915a4d3bc3424064"},
+{userId: "UID2", fname: "Elon", lname: "Musk",
+  emailId: "emusk@abc.com",
+	address: "Apt 101 Tryon Street",city: "Jersey City",state:"NJ",zipcode:07097,country:"United States",saltPassword:"eef42340926ec51e",hashPassword:"e06ce3660fef9cd9459d89c6c4354a08dac7519fb476fe831a4e15dc72bdf83ecf2b31c790ffab8c42759ef3db490e56b0f860be46e02749b34b4a735f75b9a8"}]);
+
+
+3)You can use the credentials:
+
+user 1:
+useranme:nickidman@abc.com
+password:password123
+
+
+user 2:
+useranme:emusk@abc.co
+password: password123
