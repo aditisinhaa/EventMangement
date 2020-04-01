@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Flair Events- specific connection</title>
+    <meta name="description" content="The Title">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/assets/stylesheets/styles.css" rel="stylesheet" type="text/css"/>
+    <link href="/assets/stylesheets/newConnection.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+<div class="page-container">
+
+    <%- include('partials/header', {user: user}) %>
+    <%- include('partials/nav', {user: user}) %>
+    <section>
+
+        <form id="newConn" method="POST" action="/connections">
+          <p>
+                            <label>
+                                  <span>name: </span>
+                                </label>
+                            <input type="text" id="cname" name="cname" placeholder="name">
+              <%if(errorData.cname){%>
+      <label class="errorMsg">
+         <%=errorData.cname.msg %>
+       </label>
+       <%}%></input>
+                          </p>
+                        <p>
+                              <label>
+                                    <span>topic: </span>
+                                  </label>
+                                <input type="text" id="ctopic" name="ctopic" placeholder="topic">
+                                <%if(errorData.ctopic){%>
+                        <label class="errorMsg">
+                           <%=errorData.ctopic.msg %>
+                         </label>
+                         <%}%></input>
+                </p>
+                       
+            <p>
+                              <label>
+                                    <span>details: </span>
+                                  </label>
+                              <textarea id="cdetail" name="cdetail" placeholder="details" rows="4" cols="40"></textarea>
+                <%if(errorData.cdetail){%>
+        <label class="errorMsg">
+           <%=errorData.cdetail.msg %>
+         </label>
+         <%}%>
+                            </p>
+
+            <p>
+                              <label>
+                                    <span>where: </span>
+                                  </label>
+                              <input type="text" id="clocation" name="clocation" placeholder="location">
+                <%if(errorData.clocation){%>
+        <label class="errorMsg">
+           <%=errorData.clocation.msg %>
+         </label>
+         <%}%></input>
+                            </p>
+            <p>
+                              <label>
+                                    <span>when: </span>
+                                  </label>
+                              <input id="ctime" name="ctime" type="datetime-local">
+                <%if(errorData.ctime){%>
+        <label class="errorMsg">
+           <%=errorData.ctime.msg %>
+         </label>
+         <%}%></input>
+                            </p>
+            <p><input type="submit" value="create connection"/></p>
+                   
+                </form>
+    </section>
+    <% include partials/footer.ejs %>
+</div>
+</body>
+
+</html>

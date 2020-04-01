@@ -1,0 +1,34 @@
+<header>
+         <div>
+           <a href="/index"><img src="/assets/images/logo.svg" alt="logo" class="logo"></a>
+         </div>
+         <nav class="user-nav">
+             <ul>
+                 <li><a href="/newConnection">Start a new Connection</a></li>
+                 <% if(user){ %>
+                  <li>
+                    <form id="formLogout" action="/logout?action=signout" method="post">
+                    <button type="submit" value="Submit" id="Logout">Logout</button>
+                  </form>
+                  </li>
+                  <li>
+                    <form id="formMyConnections" action="/saved-connections?action=myConn" method="post">
+                    <button type="submit" value="Submit" id="MyConnections">My Connections</button>
+                  </form>
+                  </li>
+                <% } else{ %>
+                  <li>
+                    <form id="formLogin" action="/login?action=signin" method="post">
+                    <button type="submit" value="Submit" id="Login">Login</button>
+                  </form>
+                  </li>
+                  <li>
+                    <form id="formLogin" action="/saved-connections" method="post">
+                    <button type="submit" value="Submit" id="SignUp">SignUp</button>
+                  </form>
+                  </li>
+                <% } %>
+
+             </ul>
+         </nav>
+     </header>

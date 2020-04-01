@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Flair Events-all connections</title>
+    <meta name="description" content="The Title">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link href="/assets/stylesheets/styles.css" rel="stylesheet" type="text/css"/>
+    <link href="/assets/stylesheets/connections.css" rel="stylesheet" type="text/css"/>
+
+</head>
+
+<body>
+    <div class="page-container">
+        <%- include('partials/header', {user: user}) %>
+        <%- include('partials/nav', {user: user}) %>
+
+        <section class="connections">
+             <% for(var i =0; i<categories.length;i++) {%>
+                <h3><%= categories[i] %></h3>
+                <ul class="courses">
+                    <% connections.forEach(function(item){ %>
+                     <% if(item.ctopic === categories[i]) {%>
+                        <li>
+                            <a href="/connection?connectionId=<%= item.connectionId %>">
+                                <img src="/assets/images/<%= item.cimg%>.jpg" alt="<%= item.cimg%>" />
+                                <h3><%= item.cname %></h3>
+                                <p><%= item.cdetail %></p>
+                            </a>
+                        </li>
+                     <% } %>
+                    <% }) %>
+                </ul>
+            <% } %>
+        </section>
+
+<% include partials/footer.ejs %>
+    </div>
+</body>
+
+</html>

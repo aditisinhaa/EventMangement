@@ -1,0 +1,59 @@
+section.connection {
+    display: flex;
+    justify-content: flex-start;
+    padding: 5%;
+}
+
+.connection .course {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+    padding-right: 35px;
+}
+.connection .button-container{
+  display: inline-flex;
+}
+
+.connection .button {
+    border-radius: 4px;
+    color: beige;
+    padding: 15px 32px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.connection .green {
+    background-color: #41B883;
+    color: beige;
+    border: 1px solid green;
+    margin: 3px
+}
+
+.connection .red {
+    background-color: #dc6262;
+    color: beige;
+    border: 1px solid #dc6262;
+    margin: 3px
+}
+
+.connection .blue {
+    background-color: #61dafb;
+    color: beige;
+    border: 1px solid #61dafb;
+    margin: 3px
+}
+
+.connection .profile {
+    display: flex;
+    padding-left: 100px;
+}
+
+.profile img {
+    padding-right: 40px;
+}
+
+.details p {
+    padding-left: 20px;
+    font-size: 18px;
+    font-family: monospace;
+}

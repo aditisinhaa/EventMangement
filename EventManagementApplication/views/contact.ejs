@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Contact Us</title>
+    <meta name="description" content="The Title">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/assets/stylesheets/styles.css" rel="stylesheet" type="text/css"/>
+    <link href="/assets/stylesheets/contact.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+    <div class="page-container">
+        <%- include('partials/header', {user: user}) %>
+        <%- include('partials/nav', {user: user}) %>
+
+        <section class="welcomeText">
+            <h2>Want to meet us?</h2>
+
+
+<div class="float-container">
+    <section class="about">
+        <img src="/assets/images/contactus.jpeg" alt="contact">
+    </section>
+
+    <section class="info">
+        <form action="/index">
+  <div class="container">
+    <h1>Contact Us</h1>
+    <p>Please fill in your details!!</p>
+    <hr>
+
+      <label><b>Name</b></label>
+             <input type="text" placeholder="Enter Your Name" name="name" required>
+             <label ><b>Email</b></label>
+             <input type="text" placeholder="Enter Your Email" name="email" required>
+
+            <label><b>Query</b></label>
+            <input type="text" placeholder="Let us know your query.Type here.." name="query" required>
+    <hr>
+    <button type="submit" class="registerbtn">Submit</button>
+  </div>
+
+</form>
+    </section>
+</div>
+           <br><br>
+
+        </section>
+<% include partials/footer.ejs %>
+    </div>
+</body>
+
+</html>

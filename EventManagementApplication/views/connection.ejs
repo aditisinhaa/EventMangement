@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Flair Events- specific connection</title>
+    <meta name="description" content="The Title">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link href="/assets/stylesheets/styles.css" rel="stylesheet" type="text/css"/>
+    <link href="/assets/stylesheets/connection.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+    <div class="page-container">
+        <%- include('partials/header', {user: user}) %>
+        <%- include('partials/nav', {user: user}) %>
+
+        <section class="connection">
+            <div class="course">
+                <div>
+                    <h2><%= connectionFor.cname %></h2>
+                    <div class="profile">
+                        <img src="/assets/images/<%=connectionFor.cimg %>.jpg" alt="<%= connectionFor.cimg %>.jpg">
+                        <div>
+                            <p>Hosted by: Flair Events</p>
+                            <p><%= connectionFor.ctime %></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="details">
+                    <h2>Details</h2>
+
+                    <p> <%= connectionFor.cdetail %>
+                    </p>
+                </div>
+            </div>
+            <form id="addToConnection" method="POST" action="#">
+            <div class="button-container">
+                <p>Are you going?</p><input type="hidden" name="viewConnId" value="<%= connectionFor.connectionId %>">
+                <div class="button green" onclick="document.getElementById('addToConnection').setAttribute('action','/saved-connections?action=<%= (action===undefined || action==='')?'saveConnection':'updateConnForUser' %>&connectionFor=<%= JSON.stringify(connectionFor) %>&viewConnId=<%= connectionFor.connectionId %>&rsvp=Yes');document.getElementById('addToConnection').submit();">Yes</div>
+                <div class="button red" onclick="document.getElementById('addToConnection').setAttribute('action','/saved-connections?action=<%= (action===undefined || action==='')?'saveConnection':'updateConnForUser' %>&connectionFor=<%= JSON.stringify(connectionFor) %>&viewConnId=<%= connectionFor.connectionId %>&rsvp=No');document.getElementById('addToConnection').submit();">No</div>
+                <div class="button blue" onclick="document.getElementById('addToConnection').setAttribute('action','/saved-connections?action=<%= (action===undefined || action==='')?'saveConnection':'updateConnForUser' %>&connectionFor=<%= JSON.stringify(connectionFor) %>&viewConnId=<%= connectionFor.connectionId %>&rsvp=Maybe');document.getElementById('addToConnection').submit();">Maybe</div>
+            </div>
+              </form>
+
+        </section>
+
+<% include partials/footer.ejs %>
+    </div>
+</body>
+
+</html>

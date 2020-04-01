@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Flair Events</title>
+    <meta name="description" content="The Title">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link href="/assets/stylesheets/styles.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+    <div class="page-container">
+
+        <%- include('partials/header', {user: user}) %>
+        <%- include('partials/nav', {user: user}) %>
+        <script type="text/javascript">
+        if(<%= invalidAccess %>) alert("Please Login!");
+    </script>
+
+        <section class="welcomeText">
+            <h2>Welcome</h2>
+
+            Keep your calendar clear: Every season and every day in Charlotte,Flair Events brings something new and exciting.<br>
+            Heated sports battles, chart-topping entertainers and colorful city celebrations are on the books always.<br><br>
+            <br>
+
+            If you like basketball, beer and barbecue you're in it to win it in Charlotte. First off, know your<br>
+            Lexington-style from your Eastern-style, extra cred for pairing correctly with a local craft beer.<br>
+            Head over to eclectic Plaza Midwood to drink. Get outside (in November) and bike or jog The Whitewater Center and hike nearby Crowder's Mountain.<br>
+            Meet knew people and create bonds.<br>Don't miss something and regret being there later!!<br>
+           <br><br>
+
+        </section>
+<% include partials/footer.ejs %>
+    </div>
+</body>
+
+</html>

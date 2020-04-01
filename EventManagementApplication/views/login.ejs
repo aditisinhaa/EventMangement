@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <meta name="description" content="The Title">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/assets/stylesheets/styles.css" rel="stylesheet" type="text/css"/>
+    <link href="/assets/stylesheets/contact.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+    <div class="page-container">
+        <%- include('partials/header', {user: user}) %>
+        <%- include('partials/nav', {user: user}) %>
+
+        <section class="welcomeText">
+            <h2>Are you already a member?Please login</h2>
+
+
+<div class="float-container">
+    <section class="about">
+        <img src="/assets/images/login.png" alt="contact">
+    </section>
+
+    <section class="info">
+    <form id="login" method="POST" action="/signin?action=signin">
+  <div class="container">
+    <h1>Login here</h1>
+    <hr>
+          <%if(errorData){%>
+              <label class="errorMsg">
+                <%=errorData%>
+              </label>
+              <%}%>
+            <label><b>Username</b></label>
+             <input type="text" placeholder="Enter Your Name" name="username">
+             <label ><b>Password</b></label>
+             <input type="password" placeholder="Enter Your Email" name="pwd">
+    <hr>
+    <button type="submit" class="registerbtn">Submit</button>
+  </div>
+
+</form>
+    </section>
+</div>
+           <br><br>
+
+        </section>
+<% include partials/footer.ejs %>
+    </div>
+</body>
+
+</html>

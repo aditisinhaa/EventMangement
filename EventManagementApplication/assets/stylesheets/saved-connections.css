@@ -1,0 +1,75 @@
+section.saved-connection {
+    position: relative;
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+table,
+th,
+td {
+    border: 1px solid;
+    border-collapse: collapse;
+}
+
+table {
+    background-color: #2f2e26;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 0 10px;
+}
+
+th {
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+td {
+    padding: 10px;
+}
+
+table .button {
+    border-radius: 4px;
+    color: beige;
+    padding: 5px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid #2f2e26;
+}
+
+.button.update {
+    background-color: #41B883;
+    margin-right: 10px;
+}
+
+.button.delete {
+    background-color: #1a1d24;
+}
+.buttonStyle {
+    width:250px;
+}
+.connection-title {
+    display: flex;
+}
+
+table img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+table h4,
+p {
+    margin-top: 0;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Flair Events-saved connections</title>
+    <meta name="description" content="The Title">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link href="/assets/stylesheets/styles.css" rel="stylesheet" type="text/css"/>
+     <link href="/assets/stylesheets/saved-connections.css" rel="stylesheet" type="text/css"/>
+    <script>
+      sessionStorage.setItem('isUserLoggedIn', true);
+    </script>
+
+</head>
+
+<body>
+    <div class="page-container">
+      <%- include('partials/header', {user: user}) %>
+      <%- include('partials/nav', {user: user}) %>
+
+        <section class="saved-connection">
+            <div class="content">
+                <h2><%= user %>'s Connections</h2>
+                <form id="updateDelete" method="POST" action="#">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Connection</th>
+                            <th>Category</th>
+                            <th>Going?</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                          <% if(connectionFor.length >0) {%>
+                                  <% for(var i =0; i<connectionFor.length;i++) {%>
+                            <tr>
+                            <td class="connection-title">
+                                <img src="/assets/images/<%= connectionFor[i].connection.cimg%>.jpg" alt="<%= connectionFor[i].connection.cimg %>" />
+                                <div>
+                                  <input type="hidden" name="viewConnId" value="<%= connectionFor[i].connection.connectionId %>">
+                                    <h4><%= connectionFor[i].connection.cname %></h4>
+                                    <p><%= connectionFor[i].connection.cdetail %></p>
+                                </div>
+                            </td>
+                            <td><%= connectionFor[i].connection.ctopic %></td>
+                            <td><%= connectionFor[i].rsvp %></td>
+                            <td class="buttonStyle">
+
+                                              <div class="button update" onclick="document.getElementById('updateDelete').setAttribute('action','/connection?action=updateConnection&connectionId=<%= connectionFor[i].connection.connectionId %>');document.getElementById('updateDelete').submit();">Update</div>
+                                              <div class="button delete"  onclick="document.getElementById('updateDelete').setAttribute('action','/saved-connections?action=deleteData&connectionFor=<%= JSON.stringify(connectionFor[i].connection) %>');document.getElementById('updateDelete').submit();">Delete</div>
+                            </td>
+                        </tr>
+                        <% } %>
+                              <% } else { %>
+                                <tr>
+                                    <td colspan="4">
+                                      No connection(s) to display.
+                                    </td>
+                                </tr>
+                              <% } %>
+                    </tbody>
+                </table>
+              </form>
+            </div>
+        </section>
+<% include partials/footer.ejs %>
+    </div>
+</body>
+
+</html>
