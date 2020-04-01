@@ -3,4 +3,5 @@ I have designed this user friendly website to create a platform for people to ge
 You can use this website to create a events as well as add any events that is happening around  you in your cart.
 
 #Installing
+
 This is a node.js project and contains an app.js file.We need run this file to start the application
